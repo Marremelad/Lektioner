@@ -1,1 +1,1 @@
-README file for lektioner.
+README file för lektioner.

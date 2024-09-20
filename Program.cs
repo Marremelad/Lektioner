@@ -15,7 +15,7 @@ class Program
         }
         finally
         {
-            Console.WriteLine("End");
+            Console.WriteLine("End, hello");
         }
         Console.WriteLine("Bug fix branch");
     }

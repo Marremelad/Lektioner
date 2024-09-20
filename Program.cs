@@ -17,17 +17,7 @@ class Program
         {
             Console.WriteLine("End");
         }
-
-        Console.WriteLine("Hello, World!");
-        Console.WriteLine("Hello, World!");
-        Console.WriteLine("Hello, World!");
-        Console.WriteLine("Hello, World!");
-        Console.WriteLine("Hello, World!");
-        Console.WriteLine("Hello, World!");
-        Console.WriteLine("Hello, World!");
-        Console.WriteLine("Hello, World!");
-        Console.WriteLine("Hello, World!");
-        Console.WriteLine("Hello, World!");
+        Console.WriteLine("Bug fix branch");
     }
 
 }

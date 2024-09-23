@@ -84,7 +84,7 @@ class Program
     }
     static void Main(string[] args)
     {
-        Person person = new Person("Mauricio", 26);
+        var person = new Person("Mauricio", 26);
         
         Console.WriteLine(person.Name);
 

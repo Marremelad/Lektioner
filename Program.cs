@@ -4,24 +4,27 @@
     {
         public static void Main(string[] args)
         {
-            List<IComparable> comparables =
+            List<object> listOfObjects =
             [
                 new Person("Mauricio", 26),
-                new Person("Per", 10),
-                new Person("Leo", 26),
                 new Person("Bosse", 100),
+                new Person("Leo", 26),
+                new Person("Billy", 21),
+                new Animal("Leopard", "Mike", 10),
                 new Dog("Doggy", 10),
-                new Cat("Kitty", 5),
-
+                new Dog("Buster", 10),
+                new Cat("Whiskers", 2),
+                new Car("Honda", "Civic", 1999), // Makes IsComparable return false.
             ];
-            CompareAge(comparables);
+            
+            if (IsComparable(listOfObjects)) CompareAge(listOfObjects);
+            else Console.WriteLine("All objects in the list where not comparable.");
         }
         
         public interface IComparable
         {
             public int Age { get; set; }
             public string Name { get; set; }
-
             void Speak();
         }
         
@@ -87,7 +90,44 @@
                 Console.WriteLine("Meow!");
             }
         }
-        static void CompareAge(List<IComparable> comparables)
+
+        public class Car
+        {
+            public string Make { get; set; }
+            public string Model { get; set; }
+            public int Year { get; set; }
+
+            public Car(string make, string model, int year)
+            {
+                Make = make;
+                Model = model;
+                Year = year;
+            }
+
+            public void DisplayCar()
+            {
+                Console.WriteLine($"Make: {Make}\nModel: {Model}\n Manufactured in {Year}");
+            }
+            
+            public void Drive()
+            {
+                Console.WriteLine("Skrt Skrt!!!");
+            }
+        }
+        
+        public static bool IsComparable(List<object> list)
+        {
+            foreach (var item in list)
+            {
+                if (item is not IComparable)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        
+        static void CompareAge(List<object> comparables)
         {
             for (int i = 0; i < comparables.Count; i++)
             {
@@ -101,14 +141,13 @@
                             animal.Age < otherAnimal.Age ? $"{animal.Name} the {animal.Species} is younger than {otherAnimal.Name} the {otherAnimal.Species}." :
                             $"{animal.Name} the {animal.Species} is older than {otherAnimal.Name} the {otherAnimal.Species}."); 
                     }
-
-                    if (comparables[i] is Person person && comparables[j] is Person otherPerson)
+                    else if (comparables[i] is Person person && comparables[j] is Person otherPerson)
                     {
                         Console.WriteLine(person.Age == otherPerson.Age ? $"{person.Name} and {otherPerson.Name} are the same age." :
                             person.Age < otherPerson.Age ? $"{person.Name} is younger than {otherPerson.Name}." :
                             $"{person.Name} is older than {otherPerson.Name}."); 
                     }
-                    else if (comparables[i] is not Person || comparables[j] is not Person)
+                    else
                     {
                         Console.WriteLine($"Object of type {comparables[i].GetType().Name} can not be compared to object of type {comparables[j].GetType().Name}.");
                     }

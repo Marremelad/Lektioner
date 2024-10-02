@@ -19,7 +19,6 @@
             
             if (IsComparable(listOfObjects)) CompareAge(listOfObjects);
             else Console.WriteLine("One or more objects in the list are not comparable.");
-            
         }
         
         public interface IComparable

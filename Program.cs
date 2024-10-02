@@ -14,8 +14,7 @@
                 new Cat("Kitty", 5),
 
             ];
-            Cat cat = new Cat("Whiskers", 5);
-            Console.WriteLine(cat.Species);
+            CompareAge(comparables);
         }
         
         public interface IComparable
@@ -98,9 +97,9 @@
 
                     if (comparables[i] is Animal animal && comparables[j] is Animal otherAnimal)
                     {
-                        Console.WriteLine(animal.Age == other.A? $"{person.Name} and {otherPerson.Name} are the same age." :
-                            person.Age < otherPerson.Age ? $"{person.Name} is younger than {otherPerson.Name}." :
-                            $"{person.Name} is older than {otherPerson.Name}."); 
+                        Console.WriteLine(animal.Age == otherAnimal.Age? $"{animal.Name} the {animal.Species} and {otherAnimal.Name} the {otherAnimal.Species} are the same age." :
+                            animal.Age < otherAnimal.Age ? $"{animal.Name} the {animal.Species} is younger than {otherAnimal.Name} the {otherAnimal.Species}." :
+                            $"{animal.Name} the {animal.Species} is older than {otherAnimal.Name} the {otherAnimal.Species}."); 
                     }
 
                     if (comparables[i] is Person person && comparables[j] is Person otherPerson)

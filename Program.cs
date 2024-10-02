@@ -10,22 +10,22 @@
                 new Person("Bosse", 100),
                 new Person("Leo", 26),
                 new Person("Billy", 21),
-                new Animal("Leopard", "Mike", 10),
+                new Animal("Leopard", "Mike", 7),
                 new Dog("Doggy", 10),
                 new Dog("Buster", 10),
                 new Cat("Whiskers", 2),
-                new Car("Honda", "Civic", 1999), // Makes IsComparable return false.
+                // new Car("Honda", "Civic", 1999), // Makes IsComparable return false.
             ];
             
             if (IsComparable(listOfObjects)) CompareAge(listOfObjects);
-            else Console.WriteLine("All objects in the list where not comparable.");
+            else Console.WriteLine("One or more objects in the list are not comparable.");
+            
         }
         
         public interface IComparable
         {
             public int Age { get; set; }
             public string Name { get; set; }
-            void Speak();
         }
         
         public class Person : IComparable
@@ -106,7 +106,7 @@
 
             public void DisplayCar()
             {
-                Console.WriteLine($"Make: {Make}\nModel: {Model}\n Manufactured in {Year}");
+                Console.WriteLine($"Make: {Make}\nModel: {Model}\nManufactured in {Year}");
             }
             
             public void Drive()

@@ -1,39 +1,55 @@
-﻿namespace Lektioner;
+﻿using System.Diagnostics;
 
-public abstract class Program
+namespace Lektioner;
+
+public class Program
 {
     public static void Main(string[] args)
     {
-        Storage<string> stringStorage = new();
-        stringStorage.AddItem("Hello, World!");
-        stringStorage.DisplayItems();
+        List<int> myNumbers = [1, 2, 3];
+        List<string> myStrings = ["Mauricio", "Tobias", "Leo"];
+        List<object> myObjects = ["Jake", 1, 2, 3];
+
+        Stopwatch sw = new Stopwatch();
+        sw.Start();
+
+        for (int i = 0; i < 1000000; i++)
+        {
+            myObjects.Add(i);
+        }
+        sw.Stop();
+        Console.WriteLine($"List of objects took: {sw.ElapsedMilliseconds} milliseconds.");
+
+        sw = new Stopwatch();
+        sw.Start();
         
-        Storage<int> intStorage = new();
-        intStorage.AddItem(1);
-        intStorage.DisplayItems();
-    }
-
-    private static void DisplayInput<T>(T input)
-    {
-        Console.WriteLine(input);
-    }
-
-    public class Storage<T>
-    {
-        private List<T> _items = new List<T>();
-
-        public void AddItem(T item)
+        for (int i = 0; i < 1000000; i++)
         {
-            _items.Add(item);
-            Console.WriteLine($"{item} was added to list.");
+            myNumbers.Add(i);
         }
+        sw.Stop();
+        Console.WriteLine($"List of numbers took: {sw.ElapsedMilliseconds} milliseconds.");
 
-        public void DisplayItems()
+        sw = new Stopwatch();
+        sw.Start();
+        
+        for (int i = 0; i < 1000000; i++)
         {
-            foreach (var item in _items)
-            {
-                Console.WriteLine(item);
-            }
+            myStrings.Add($"{i}");
         }
+        sw.Stop();
+        Console.WriteLine($"List of strings took: {sw.ElapsedMilliseconds} milliseconds.");
+        
+        
+        sw = new Stopwatch();
+        sw.Start();
+        
+        for (int i = 0; i < 1000000; i++)
+        {
+            myObjects.Add($"{i}");
+        }
+        sw.Stop();
+        Console.WriteLine($"List of strings in object list took: {sw.ElapsedMilliseconds} milliseconds.");
     }
 }
+

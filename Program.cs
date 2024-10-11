@@ -1,13 +1,11 @@
-﻿ls
-using System.Diagnostics;
-
-namespace Lektioner;
+﻿namespace Lektioner;
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine("Hej! Här tagait bort din kod :)"); 
+        Console.WriteLine("Hej! Här tagait bort din kod :)");
+        Console.WriteLine("Hi!");
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.IO.Compression;
+using System.Threading;
 using Microsoft.VisualBasic.CompilerServices;
 
 namespace Lektioner;
@@ -7,19 +8,19 @@ using System;
 
 class Program
 {
-    public static void Main(string[] args)
+    static async Task Main(string[] args)
     {
-        List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        Console.WriteLine("Starting asynchronous task");
+        await DoWorkAsync();
+        Console.WriteLine("Asynchronous task done");
+    }
 
-        var evenNumbers = numbers.Where(n => n % 2 == 0);
-
-        foreach (var num in evenNumbers)
-        {
-            Console.WriteLine(num);
-        }
-
-    }    
-    
+    static async Task DoWorkAsync()
+    {
+        Console.WriteLine("Working asynchronously...");
+        await Task.Delay(2000);
+        Console.WriteLine("Done");
+    }
 }
 
 

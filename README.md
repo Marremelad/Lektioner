@@ -1,1 +1,1 @@
-# Code from the latest lecture
+# Code from the latest lecture 📖

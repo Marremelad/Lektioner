@@ -8,18 +8,9 @@ using System;
 
 class Program
 {
-    static async Task Main(string[] args)
+    public static void Main(string[] args)
     {
-        Console.WriteLine("Starting asynchronous task");
-        await DoWorkAsync();
-        Console.WriteLine("Asynchronous task done");
-    }
-
-    static async Task DoWorkAsync()
-    {
-        Console.WriteLine("Working asynchronously...");
-        await Task.Delay(2000);
-        Console.WriteLine("Done");
+        
     }
 }
 

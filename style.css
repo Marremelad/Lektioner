@@ -11,10 +11,10 @@ header {
 
 main {
     text-align: center;
-    height: 60vh;
-    display: flex;
+    min-height: 60vh;
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; */
     margin-bottom: 2rem;
 }
 
@@ -98,6 +98,7 @@ main div:hover {
 
 main div img {
     padding-top: 1rem;
-    width: 100%;
+    width: 90%;
+    height: 80%;
     border-radius: 50px;
 }

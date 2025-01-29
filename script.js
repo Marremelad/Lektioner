@@ -1,6 +1,6 @@
 
 function CheckPoints(points) {
-    if (points == 7) {
+    if (points === 7) {
         return "Congratulations, you got the max score!"
     }
 }
@@ -19,22 +19,22 @@ let roseEarly = earlyRiser[Math.floor(Math.random() * earlyRiser.length)];
 // let favoriteAnimal = "Leopard";
 // let roseEarly = true;
 
-if (favoriteColor == "Blue") {
+if (favoriteColor === "Blue") {
     points++
 }
 
-if (favoriteAnimal == "Leopard") {
+if (favoriteAnimal === "Leopard") {
     points++
 }
 
-if (roseEarly == true) {
+if (roseEarly === true) {
     points++
 }
 
-if (favoriteColor == "Blue" && favoriteAnimal == "Leopard") {
+if (favoriteColor === "Blue" && favoriteAnimal === "Leopard") {
     points += 3
 
-    if (roseEarly == true) {
+    if (roseEarly === true) {
         points++
     }
 }

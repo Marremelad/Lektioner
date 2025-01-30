@@ -1,5 +1,4 @@
-const car = {
-    color: "car",
-    type: "volvo"
-}
+const element = document.querySelector("#paragraph-id")
+
+element.classList.add("some-class");
 

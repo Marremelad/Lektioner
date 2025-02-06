@@ -1,7 +1,31 @@
-
-.some-class {
-    color: blue;
-    background-color: green;
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
+.card {
+    background-color: skyblue;
+    height: 300px;
+    width: 200px;
+    margin: 50px;
+    text-align: center;
+}
+
+.change-color {
+    background-color: black;
+    color: white;
+}
+
+ol, ul {
+    margin: 50px;
+}
+
+.button-spacing {
+    margin-left: 100px;
+}
+
+.remove-item {
+    color: red;
+}
 
